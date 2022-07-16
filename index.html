@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de datos</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Esta es una pagina para rellenar datos</h1>
+            <section>
+                <form action="" id="form">
+                    <label for="nombre">
+                        <input id="nombre" type="text" placeholder="Nombre">
+                    </label>
+                    <label for="apellido">
+                        <input id="apellido" type="text" placeholder="Apellido">
+                    </label>
+                    <label for="edad">
+                        <input id="edad" type="number" placeholder="edad">
+                    </label>
+                    <label for="">
+                        <input type="button" onclick="insertarDatos()" value="Añadir a tabla">
+                    </label>
+                </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="insertionPoint"></tbody>
+                </table>
+            </section>
+        </header>
+        <script src="./table.js"></script>
+    </main>
+</body>
+</html>
