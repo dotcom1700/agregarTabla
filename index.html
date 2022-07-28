@@ -24,17 +24,19 @@
                     </label>
                     <label for="">
                         <input type="button" onclick="insertarDatos()" value="Añadir a tabla">
+                        <input type="button" onclick="borrarDatos()" value="Borrar fila">
                     </label>
                 </form>
-                <table>
+                <table id="table">
                     <thead>
+                        <p>Nota: Se debe seleccionar una celda de la fila deseaba a borrar antes de dar click en borrar</p>
                         <tr>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Edad</th>
                         </tr>
                     </thead>
-                    <tbody id="insertionPoint"></tbody>
+                    <tbody></tbody>
                 </table>
             </section>
         </header>

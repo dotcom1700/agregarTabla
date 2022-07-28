@@ -1,22 +1,29 @@
+var indiceFila = 0;
 function insertarDatos() {
-    let nombre = document.getElementById("nombre").value;
-    let apellido = document.getElementById("apellido").value;
-    let edad = document.getElementById("edad").value;
-    document.getElementById("insertionPoint").innerHTML 
-    += "<tr><td>" + nombre + "</td><td>" + apellido 
-    + "</td><td>" + edad + "</td></tr>";
+    nombre   = document.getElementById("nombre").value;
+    apellido = document.getElementById("apellido").value;
+    edad     = document.getElementById("edad").value;
+    getTable = document.getElementById("table").rows.lenght;
+    row = getTable + 1;
 
-    document.getElementById("nombre").value = "";
-    document.getElementById("apellido").value = "";
-    document.getElementById("edad").value = "";
-    guardarDatos(nombre, apellido, edad);
-}
-let arreglo = [];
-function guardarDatos(nombre,apellido,edad){
-    datos = {
-        nombre: nombre,
-        apellido: apellido,
-        edad: edad,
+    var table         = document.getElementById("table");
+    var insertRow     = table.insertRow(getTable)
+    insertRow.onclick = function (e) {
+        indiceFila    = this.rowIndex;
+        var datos     = [];
+        for (let i = 0; i < 3; i++) {
+            var celda = insertRow.cells[i];
+            var inp   = celda.getElementbyTagName('input');
+            datos.push(inp[0].value);
+        }
+        nombre   = value[0];
+        apellido = value[1];
+        edad     = value[2];
     }
-    arreglo.push(datos);
+    insertRow.insertCell(0).innerHTML = "<input type='text' value='" + edad + "' name='" + row + "'>";
+    insertRow.insertCell(0).innerHTML = "<input type='text' value='" + apellido + "' name='" + row + "'>";
+    insertRow.insertCell(0).innerHTML = "<input type='text' value='" + nombre + "' name='" + row + "'>";
+}
+borrarDatos = function (rowIndx) {
+    document.getElementById('table').deleteRow(indiceFila);
 }
